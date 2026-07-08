@@ -20,27 +20,33 @@ or (in V-LINE mode) `:'<, '>normal I- `.
 Execute the sequence `5oItem 0`, being 5 at the beginning any arbitrary number
 of your choice. This insert will look like this:
 
+```
 Item 0
 Item 0
 Item 0
 Item 0
 Item 0
+```
 
 ## 4. Increment the numbers of a numbered list
 
 Using the previous example, press `vip`, this will select the entire paragraph.
 Now press `gCtrl+a`. Your list will look like this:
 
+```
 Item 1
 Item 2
 Item 3
 Item 4
 Item 5
+```
 
 ## 5. Inside and around operations
 
 Ex 1. `"Somehing something"`
+
 Ex 2. `(Somehing something)`
+
 Ex 3. `[Somehing something]`
 
 To copy somenthing inside of quotes, parenthesis, braces, brackets or anything
