@@ -5,7 +5,7 @@
 Enter V-LINE mode (`V`), selecte the lines, press `:`. If you want to replace
 something using regex, it should look like this: `:'<, '>s/pattern/replacement/{gic}`.
 
-## 2. Add "- " to the beginning of many contiguous lines:
+## 2. Add "- " to the beginning of many contiguous lines
 
 ```vim
 :2,7normal I- 
@@ -13,7 +13,7 @@ something using regex, it should look like this: `:'<, '>s/pattern/replacement/{
 :22,23normal I- 
 ```
 
-or (in V-LINE mode) `:'<, '>normal I- `.
+or (in V-LINE mode) `:'<, '>normal I-`.
 
 ## 3. Insert text n times
 
@@ -111,3 +111,67 @@ Save with privileges: `w !sude tee %`
 Replace occurrence in all the buffers: `:bufdo %s/foo/bar/g | update`
 
 Changes list: `:changes`. Last change `g;`, next `g,`
+
+## 9. Insert mode navigation
+
+While in insert mode, you can just `<C-m>` to insert a new line below, or break
+the current one if you're not at the end. If you want to insert a new line regar
+dless of the position, you can use these maps:
+
+```lua
+-- nvim
+vim.keymap.set("i", "<C-k>", "<C-o>O", { desc = "Insert line above when in insert mode" })
+vim.keymap.set("i", "<C-j>", "<C-o>o", { desc = "Insert lines below when in insert mode" })
+```
+
+```vim
+" vim
+inoremap <C-j> <C-o>o
+inoremap <C-k> <C-o>O
+```
+
+If you want to navigate up and down without leaving insert mode and not using the arrow keys, you can `<C-g>j` and `<C-g>k`. My mappings are:
+
+```lua
+-- nvim
+vim.keymap.set("i", "<C-n>", "<C-g>j", { desc = "Go to line below in insert mode" })
+vim.keymap.set("i", "<C-p>", "<C-g>k", { desc = "Go to line above in insert mode" })
+```
+
+```vim
+" vim
+inoremap <C-n> <C-g>j
+inoremap <C-p> <C-g>k
+```
+
+If you want to navigate one char backward/forward:
+
+```lua
+-- nvim
+vim.keymap.set("i", "<A-h>", "<C-o>h", { desc = "Go to previous caracter while in insert mode" })
+vim.keymap.set("i", "<A-l>", "<C-o>l", { desc = "Go to previous caracter while in insert mode" })
+```
+
+```vim
+" vim
+inoremap <A-h> <C-o>h
+inoremap <A-l> <C-o>l
+```
+
+If you want to jump words:
+
+```lua
+-- nvim
+vim.keymap.set("i", "<C-,>", "<C-o>b", { desc = "Go to previous word in insert mode" })
+vim.keymap.set("i", "<C-.>", "<C-o>w", { desc = "Go to next word in insert mode" })
+vim.keymap.set("i", "<C-S->>", "<C-o>W", { desc = "Go to next WORD in insert mode" })
+vim.keymap.set("i", "<C-S-<>", "<C-o>B", { desc = "Go to previous WORD in insert mode" })
+```
+
+```vim
+" vim
+inoremap <C-,> <C-o>b
+inoremap <C-.> <C-o>w
+inoremap <C-S->> <C-o>W
+inoremap <C-S-<> <C-o>B
+```
