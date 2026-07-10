@@ -15,6 +15,8 @@ something using regex, it should look like this: `:'<, '>s/pattern/replacement/{
 
 or (in V-LINE mode) `:'<, '>normal I-`.
 
+https://github.com/user-attachments/assets/04a25172-ec9d-4693-8f55-987871223e6f
+
 ## 3. Insert text n times
 
 Execute the sequence `5oItem 0`, being 5 at the beginning any arbitrary number
@@ -28,6 +30,8 @@ Item 0
 Item 0
 ```
 
+https://github.com/user-attachments/assets/95904d23-9184-4a39-81ed-b83760d02acc
+
 ## 4. Increment the numbers of a numbered list
 
 Using the previous example, press `vip`, this will select the entire paragraph.
@@ -40,6 +44,8 @@ Item 3
 Item 4
 Item 5
 ```
+
+https://github.com/user-attachments/assets/b80be4dd-053c-40bd-8056-f7688bef3462
 
 ## 5. Inside and around operations
 
@@ -55,6 +61,8 @@ else, press `yi+{|[|(|"`.
 To delete and start editing inside something, press `ci+{|[|(|"`.
 
 I think you got it, the same applies to d/D, v/V, etc.
+
+https://github.com/user-attachments/assets/722c9fb6-8eb0-4090-af88-716863db2e66
 
 ## 6. Organize columns
 
@@ -175,3 +183,5 @@ inoremap <C-.> <C-o>w
 inoremap <C-S->> <C-o>W
 inoremap <C-S-<> <C-o>B
 ```
+
+https://github.com/user-attachments/assets/85068f3d-e725-4878-8a29-751010895c52
